@@ -3,7 +3,7 @@
 import styles from "./page.module.css";
 import DatePicker from "./components/datePicker/page";
 import TimePicker from "./components/timePicker/page";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import moment from "moment";
 
 export default function Home() {
@@ -24,11 +24,6 @@ export default function Home() {
     e.preventDefault();
     setValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-
-  const checkValidation =
-    values.nbPlace && values.time && moment(selected).format("DD/MM/YYYY");
-  const checkInfo =
-    values.name && values.firstname && values.email && values.phone && !loading;
 
   const handleChangeStep = (e, type) => {
     e.preventDefault();
@@ -141,6 +136,21 @@ export default function Home() {
       });
   };
 
+  const validateEmail=useCallback((email)=>{
+    const pattern=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    return pattern.test(email)
+
+  },[])
+
+  
+  const checkValidation =
+    values.nbPlace && values.time && moment(selected).format("DD/MM/YYYY");
+  const checkInfo =
+    values.name && values.firstname && values.email && values.phone && !loading && validateEmail(values.email) && values.phone.length >=10;
+
+  console.log('validateEmail',validateEmail(values.email))
+
   return currentStep === "DETAIL" ? (
     <div className={styles.page}>
       {checkValidation ? (
@@ -236,6 +246,7 @@ export default function Home() {
             className={styles.labelNbPalce}
             htmlFor="email"
             onChange={handleChange}
+            style={{ color: !validateEmail(values.email) && values.email && "red"}}
           >
             Adresse e-mail :
           </label>
@@ -253,6 +264,7 @@ export default function Home() {
             className={styles.labelNbPalce}
             htmlFor="phone"
             onChange={handleChange}
+            style={{ color: values.phone && values.phone.length <10 && "red"}}
           >
             Téléphone :
           </label>
