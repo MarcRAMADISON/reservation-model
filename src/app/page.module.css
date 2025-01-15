@@ -25,6 +25,9 @@
 
 .inputBlock{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .block {
@@ -112,4 +115,19 @@
 .success{
   color:green;
   margin-bottom: 50px;
+}
+
+@media (max-width: 720px){
+  .pageInfo{
+    grid-template-columns: 100%;
+  }
+  .nextButton{
+    margin-top: 0px;
+  }
+  .disabled{
+    margin-top: 0px;
+  }
+  .block {
+    margin-left: 0px;
+  }
 }

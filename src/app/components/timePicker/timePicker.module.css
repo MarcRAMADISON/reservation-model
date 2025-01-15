@@ -1,16 +1,4 @@
 
-
-.body {
-  font-family: sans-serif; /* Police futuriste */
-  background: #1e1e2f; /* Couleur de fond sombre */
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
 /* Conteneur global */
 .futuristicTimeInput {
   display: flex;

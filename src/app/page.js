@@ -192,6 +192,7 @@ export default function Home() {
             <button
               disabled={!checkValidation}
               className={!checkValidation ? styles.disabled : styles.nextButton}
+              style={{marginTop:'70px'}}
               onClick={(e) => {
                 handleChangeStep(e, "NEXT");
               }}
