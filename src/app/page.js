@@ -80,7 +80,7 @@ export default function Home() {
           <p style="color:#000;">Heure de réservation : <strong>${values.time}</strong></p>
 
           <p style="color:#000;">Nombre de personne : <strong>${values.nbPlace}</strong></p>
-          <a href="http://localhost:3000/api/sendSecondMail?email=${
+          <a href="${process.NEXT_PUBLIC_URL}/api/sendSecondMail?email=${
             values.email
           }&type=valider"  style="text-decoration: none;" >
             <button style="
@@ -99,7 +99,7 @@ export default function Home() {
             class="styled-button">Valider la réservation</button>
           </a>
           <a 
-            href="http://localhost:3000/api/sendSecondMail?email=${values.email}&type=refuser" 
+            href="${process.NEXT_PUBLIC_URL}/api/sendSecondMail?email=${values.email}&type=refuser" 
             style="text-decoration: none;"
           >
             <button 
