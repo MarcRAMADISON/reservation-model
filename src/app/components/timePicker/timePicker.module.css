@@ -1,0 +1,57 @@
+/* Polices modernes (si disponible) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+.body {
+  font-family: 'Orbitron', sans-serif; /* Police futuriste */
+  background: #1e1e2f; /* Couleur de fond sombre */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Conteneur global */
+.futuristicTimeInput {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.label {
+  font-size: 18px;
+  color: #9a9aa9;
+}
+
+/* Input personnalisé */
+.input {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  background: linear-gradient(145deg, #282846, #1f1f2e); /* Fond en dégradé */
+  border: 2px solid #3f3f66;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 0 15px rgba(66, 135, 245, 0.4); /* Ombres futuristes */
+  padding: 10px 15px;
+  outline: none;
+  width: 300px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  appearance: none; /* Supprime les styles par défaut */
+}
+
+/* Effet au survol */
+.input:hover {
+  border-color: #4287f5;
+  box-shadow: 0 0 20px rgba(66, 135, 245, 0.7), 0 0 10px rgba(66, 135, 245, 0.5);
+  cursor: pointer;
+}
+
+/* Effet au focus */
+.input:focus {
+  background: linear-gradient(145deg, #1f1f2e, #282846); /* Inverse le dégradé */
+  border-color: #61dafb;
+  box-shadow: 0 0 30px rgba(97, 218, 251, 0.8), inset 0 0 10px rgba(97, 218, 251, 0.5);
+}
