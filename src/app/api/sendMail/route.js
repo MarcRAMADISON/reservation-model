@@ -5,7 +5,7 @@ import { Resend } from 'resend';
 const resend = new Resend('re_S9aGiw9x_8prpabNze9hPyia3iQCDmdb9');
 
 // Fonction POST exportée pour accepter les requêtes POST
-export async function POST(req: Request) {
+export async function POST(req) {
   try {
     const { to, subject, html } = await req.json(); // Récupérer les données JSON envoyées dans le corps de la requête
 

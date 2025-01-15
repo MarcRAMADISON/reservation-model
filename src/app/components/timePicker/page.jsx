@@ -1,3 +1,5 @@
+"use client"
+
 import style from './timePicker.module.css';
 
 const TimePicker = ({values,handleChange}) => {
@@ -9,7 +11,7 @@ const TimePicker = ({values,handleChange}) => {
         type="time" 
         id="time" 
         name='time' 
-        value={values.time} 
+        value={values?.time} 
         onChange={(e)=>{
           handleChange(e)
         }}

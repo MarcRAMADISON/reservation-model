@@ -5,8 +5,6 @@ import DatePicker from "./components/datePicker/page";
 import TimePicker from "./components/timePicker/page";
 import { useState } from "react";
 import moment from "moment";
-import emailjs from "@emailjs/browser";
-import { Resend } from "resend";
 
 export default function Home() {
   const [values, setValues] = useState({
@@ -17,7 +15,7 @@ export default function Home() {
     email: "",
     phone: "",
   });
-  const [selected, setSelected] = useState();
+  const [selected, setSelected] = useState(moment().format());
   const [currentStep, setCurrentStep] = useState("DETAIL");
   const [loading, setLoading] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
