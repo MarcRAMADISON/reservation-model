@@ -10,19 +10,20 @@ export default function Home() {
       <div
         style={{
           position: "absolute",
-          top: "-50px",
-          right: "1vw",
+          top: "0px",
+          right: "2vw",
           zIndex: "999",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
+        className={styles.logoContainer}
       >
         <Image
           src="/assets/jda_logo.png"
           alt="logo JDA"
-          width={300}
-          height={300}
+          width={200}
+          height={200}
         />
         <span className={styles.slogan}>
           Evader vous <br />
@@ -33,13 +34,13 @@ export default function Home() {
       <div className={styles.triangle}></div>
       <div className={styles.titleContainer}>
         <span className={styles.title}>Réserver maintenant</span>
-        <div class={styles.arrows}>
-          <div class={styles.arrow}></div>
-          <div class={styles.arrow}></div>
-          <div class={styles.arrow}></div>
+        <div className={styles.arrows}>
+          <div className={styles.arrow}></div>
+          <div className={styles.arrow}></div>
+          <div className={styles.arrow}></div>
         </div>
       </div>
-      <div style={{ position: "relative", width: "100vw", height: "100vh" }}>
+      <div style={{ position: "relative", width: "100vw", height: "100vh" }} className={styles.image}>
         <Image
           src="/assets/welcome_bg.png"
           alt="welcome_bg"
