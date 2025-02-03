@@ -1,0 +1,133 @@
+.page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .pageInfo{
+    width: fit-content;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:50px;
+    align-items: center;
+    justify-items: center;
+    place-self: center;
+  }
+  
+  .inputLine{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inputBlock{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .block {
+    margin-left: 50px;
+  }
+  
+  .labelNbPalce {
+    font-size: 18px;
+    color: #9a9aa9;
+  }
+  
+  .nextButton {
+    border: none;
+    width: 300px;
+    margin-top: 70px;
+    appearance: none;
+    background: rgb(45, 95, 150);
+    background: linear-gradient(90deg, rgba(45, 95, 150, 1) 0%, rgba(26, 6, 124, 0.8575630935968137) 94%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 0 15px rgba(66, 135, 245, 0.4);
+    /* Ombres futuristes */
+    color: #fff;
+    font-weight: bold;
+    height: 50px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  /* Input personnalisé */
+  .inputPlace {
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #fff;
+    background: linear-gradient(145deg, #282846, #1f1f2e);
+    /* Fond en dégradé */
+    border: 2px solid #3f3f66;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 0 15px rgba(66, 135, 245, 0.4);
+    /* Ombres futuristes */
+    padding: 10px 15px;
+    outline: none;
+    width: 300px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    appearance: none;
+    /* Supprime les styles par défaut */
+    margin-top: 15px;
+  }
+  
+  /* Effet au survol */
+  .inputPlace:hover {
+    border-color: #4287f5;
+    box-shadow: 0 0 20px rgba(66, 135, 245, 0.7), 0 0 10px rgba(66, 135, 245, 0.5);
+    cursor: pointer;
+  }
+  
+  /* Effet au focus */
+  .inputPlace:focus {
+    background: linear-gradient(145deg, #1f1f2e, #282846);
+    /* Inverse le dégradé */
+    border-color: #61dafb;
+    box-shadow: 0 0 30px rgba(97, 218, 251, 0.8), inset 0 0 10px rgba(97, 218, 251, 0.5);
+  }
+  
+  .resume{
+    font-size: 18px;
+    color: #9a9aa9;
+    margin-bottom: 50px;
+  }
+  
+  .disabled{
+    border: none;
+    width: 300px;
+    margin-top: 70px;
+    appearance: none;
+    background: grey;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 0 15px rgba(66, 135, 245, 0.4);
+    /* Ombres futuristes */
+    color: #fff;
+    font-weight: bold;
+    height: 50px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .success{
+    color:green;
+    margin-bottom: 50px;
+  }
+  
+  @media (max-width: 720px){
+    .pageInfo{
+      grid-template-columns: 100%;
+    }
+    .nextButton{
+      margin-top: 0px;
+    }
+    .disabled{
+      margin-top: 0px;
+    }
+    .block {
+      margin-left: 0px;
+    }
+  }

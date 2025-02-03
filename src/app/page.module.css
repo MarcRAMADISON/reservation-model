@@ -1,133 +1,72 @@
-.page {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.pageInfo{
-  width: fit-content;
-  height: fit-content;
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap:50px;
-  align-items: center;
-  justify-items: center;
-  place-self: center;
-}
-
-.inputLine{
+.container{
   display: flex;
   flex-direction: column;
+
 }
 
-.inputBlock{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 0vw solid transparent;
+  border-right: 130vw solid transparent;
+  border-bottom: 45vh solid #fff;
+  position: absolute;
+  top:-25px;
+  right:-10px;
+  z-index: 99;
+  transform: rotate(180deg);
+  opacity:0.9
 }
 
-.block {
-  margin-left: 50px;
-}
-
-.labelNbPalce {
-  font-size: 18px;
-  color: #9a9aa9;
-}
-
-.nextButton {
-  border: none;
-  width: 300px;
-  margin-top: 70px;
-  appearance: none;
-  background: rgb(45, 95, 150);
-  background: linear-gradient(90deg, rgba(45, 95, 150, 1) 0%, rgba(26, 6, 124, 0.8575630935968137) 94%);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 0 15px rgba(66, 135, 245, 0.4);
-  /* Ombres futuristes */
-  color: #fff;
+.slogan{
+  margin-top: -50px;
   font-weight: bold;
-  height: 50px;
-  border-radius: 8px;
-  cursor: pointer;
+  font-size: 3.5rem;
+  font-family: var(--font-lavishly_yours);
+  line-height: 50px;
 }
 
-/* Input personnalisé */
-.inputPlace {
-  font-family: sans-serif;
-  font-size: 16px;
-  color: #fff;
-  background: linear-gradient(145deg, #282846, #1f1f2e);
-  /* Fond en dégradé */
-  border: 2px solid #3f3f66;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 0 15px rgba(66, 135, 245, 0.4);
-  /* Ombres futuristes */
-  padding: 10px 15px;
-  outline: none;
-  width: 300px;
+.title{
+  font-weight: bold;
+  font-size: 3.5rem;
+  color:#fff;
   text-align: center;
-  transition: all 0.3s ease-in-out;
-  appearance: none;
-  /* Supprime les styles par défaut */
-  margin-top: 15px;
 }
 
-/* Effet au survol */
-.inputPlace:hover {
-  border-color: #4287f5;
-  box-shadow: 0 0 20px rgba(66, 135, 245, 0.7), 0 0 10px rgba(66, 135, 245, 0.5);
-  cursor: pointer;
+.titleContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top:60vh;
+  left:35vw;
+  z-index: 999;
 }
 
-/* Effet au focus */
-.inputPlace:focus {
-  background: linear-gradient(145deg, #1f1f2e, #282846);
-  /* Inverse le dégradé */
-  border-color: #61dafb;
-  box-shadow: 0 0 30px rgba(97, 218, 251, 0.8), inset 0 0 10px rgba(97, 218, 251, 0.5);
+.arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
 }
 
-.resume{
-  font-size: 18px;
-  color: #9a9aa9;
-  margin-bottom: 50px;
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 60px solid #00abab;
+  opacity: 0;
+  animation: appear 1.5s infinite;
 }
 
-.disabled{
-  border: none;
-  width: 300px;
-  margin-top: 70px;
-  appearance: none;
-  background: grey;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 0 15px rgba(66, 135, 245, 0.4);
-  /* Ombres futuristes */
-  color: #fff;
-  font-weight: bold;
-  height: 50px;
-  border-radius: 8px;
-  cursor: pointer;
-}
+.arrow:nth-child(1) { animation-delay: 0s; }
+.arrow:nth-child(2) { animation-delay: 0.3s; }
+.arrow:nth-child(3) { animation-delay: 0.6s; }
 
-.success{
-  color:green;
-  margin-bottom: 50px;
-}
-
-@media (max-width: 720px){
-  .pageInfo{
-    grid-template-columns: 100%;
-  }
-  .nextButton{
-    margin-top: 0px;
-  }
-  .disabled{
-    margin-top: 0px;
-  }
-  .block {
-    margin-left: 0px;
-  }
+@keyframes appear {
+  0% { opacity: 0; transform: translateY(-10px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(10px); }
 }
